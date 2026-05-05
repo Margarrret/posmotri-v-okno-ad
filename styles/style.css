@@ -68,6 +68,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* Добавляем отступ, чтобы "протолкнуть" видео ниже уровня "По-" */
+  margin-block-start: 65px; 
 }
 
 /* Уточняем размеры по Шагу 2.1 */
@@ -113,12 +115,13 @@ ol {
   font-size: inherit;
 }
 
-/* Дополнительно убедимся, что заголовки внутри рамок не имеют лишних отступов */
 .search-form__fieldset-title {
   font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 700;
+  font-weight: 400; /* Меняем 700 на 400 для точности */
   font-size: 18px;
+  line-height: 1.2; /* Примерно 21.6px */
   text-transform: uppercase;
+  margin-block-end: 5px;
 }
 
 .content__list-container {
@@ -164,6 +167,53 @@ ol {
   flex-grow: 1;
 }
 
+.title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.8;
+  text-transform: uppercase;
+  /* Убираем лишние отступы у заголовка */
+  margin: 0; 
+}
+
+.content__accent {
+  color: #545050; /* Серый цвет для "ПО-" */
+}
+
+/* 3. Убираем подчеркивание у ссылок (Шаг 3.3) */
+.content__card-link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none; /* Убираем дефолтную линию */
+}
+
+/* 4. Настраиваем заголовки карточек с обрезкой (Шаг 3.4) */
+.content__video-card-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 0.8; /* Тоже очень плотный текст */
+  text-transform: uppercase;
+  margin-block-end: 6px;
+  /* Свойства для многоточия в одну строку */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 5. Настраиваем описание с line-clamp (Шаг 3.5) */
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 0.9; /* Интерлиньяж меньше размера шрифта */
+  /* Ограничение в 2 строки */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 
 
