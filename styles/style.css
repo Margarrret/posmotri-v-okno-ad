@@ -215,7 +215,87 @@ ol {
   overflow: hidden;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
+.search-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px; /* Отступ между чекбоксами */
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  inline-size: fit-content;
+  cursor: pointer; /* Чтобы курсор менялся при наведении */
+}
+
+/* Текстовое поле ввода */
+.search-form__textfield {
+  appearance: none;
+  font-family: inherit;
+  font-size: 14px; /* Убедись, что размер шрифта совпадает с макетом */
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  outline: none;
+  padding: 0;
+  /* Устанавливаем ширину, достаточную для всего текста "например" */
+  inline-size: 225px; 
+}
+
+/* Факультатив: фокус через :has() */
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Внешний вид рамки чекбокса */
+.search-form__pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid #ffffff;
+  flex-shrink: 0;
+}
+
+/* Внутренний квадрат (галочка) */
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  inline-size: 15px; /* На 1-2 пикселя меньше рамки по макету */
+  block-size: 15px;
+  background-color: #ffffff;
+  opacity: 0; /* Скрыт по умолчанию */
+}
+
+/* Когда чекбокс нажат — показываем квадрат */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+/* Эффект при наведении на весь лейбл */
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
 
 
 
