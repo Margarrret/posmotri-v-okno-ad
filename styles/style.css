@@ -344,4 +344,58 @@ ol {
   background-color: #545050;
 }
 
+.content__list-item {
+  /* Задаём отступы, чтобы outline не прилипал к краям */
+  padding-inline: 3px;
+  margin-block-end: 30px;
+}
+
+/* Убираем отступ у последнего элемента списка */
+.content__list-item:last-child {
+  margin-block-end: 0;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: transparent; /* Обязательно прозрачно */
+}
+
+/* Текущая (активная) карточка — добавляем фон */
+.content__card-link_current {
+  background-color: #545050; /* Серый фон всей плашки при активации */
+}
+
+/* Карточка при наведении — подчёркиваем весь текст внутри */
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+/* Если наводим на уже активную карточку, оставляем ей серый фон */
+.content__card-link_current:hover {
+  background-color: #545050;
+}
+
+/* Состояние при клике (active) */
+.content__card-link:active {
+  background-color: #545050;
+}
+
+/* Сбрасываем стандартный фокус браузера */
+.content__card-link:focus {
+  outline: none;
+}
+
+/* Добавляем кастомную обводку только при навигации кнопками */
+.content__card-link:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  background-color: transparent; 
+}
+
 
