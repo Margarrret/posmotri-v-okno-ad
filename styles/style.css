@@ -256,6 +256,7 @@ ol {
   border-block-end: 1px solid currentColor;
   outline: none;
   padding: 0;
+  cursor: pointer;
   /* Устанавливаем ширину, достаточную для всего текста "например" */
   inline-size: 225px; 
 }
@@ -271,6 +272,7 @@ ol {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   inline-size: 19px;
   block-size: 19px;
   border: 1px solid #ffffff;
@@ -357,6 +359,7 @@ ol {
 
 .content__card-link {
   display: block;
+  cursor: pointer;
   text-decoration: none;
   color: #ffffff;
   background-color: transparent; /* Обязательно прозрачно */
