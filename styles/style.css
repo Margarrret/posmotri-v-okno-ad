@@ -401,4 +401,18 @@ ol {
   background-color: transparent; 
 }
 
+.result__video-container,
+.content__list-container {
+  position: relative; /* Теперь прелоадеры внутри будут ориентироваться на границы этих блоков */
+}
 
+/* Шаг 8.2: Стили самого прелоадера (файл preloader.css обычно уже содержит базу, но проверим позиционирование) */
+.preloader {
+  position: absolute;
+  inset: 0; /* Растягиваем на всю ширину и высоту родителя */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1919; /* Цвет фона должен совпадать с фоном страницы, чтобы перекрывать контент */
+  z-index: 10; /* Поднимаем прелоадер над видео и списком */
+}
