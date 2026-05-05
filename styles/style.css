@@ -9,8 +9,11 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
   inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -49,3 +52,57 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
+
+
+.content {
+  display: grid;
+  grid-template-columns: 714px 399px;
+  align-items: end;
+  gap: 30px;
+  inline-size: fit-content;
+}
+
+.result {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  /* Фиксируем ширину колонки по размеру видео */
+  inline-size: 714px; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Отступ между видео и формой */
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* Растягиваем форму от левого до правого края .result */
+  inline-size: 100%; 
+}
+
+.search-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content__list-container {
+  position: relative;
+  block-size: 298px;
+  overflow-y: auto;
+}
+
+.content__details {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+
+
+
+
