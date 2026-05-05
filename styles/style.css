@@ -56,8 +56,8 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: 714px 399px;
-  align-items: end;
+  grid-template-columns: 714px 399px; /* Видео сократится до этого размера */
+  align-items: start;
   gap: 30px;
   inline-size: fit-content;
 }
@@ -65,25 +65,60 @@ ol {
 .result {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  /* Фиксируем ширину колонки по размеру видео */
-  inline-size: 714px; 
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Отступ между видео и формой */
+  gap: 16px;
+}
+
+/* Уточняем размеры по Шагу 2.1 */
+.result__video-container {
+  inline-size: 100%; /* Занимает всю ширину левой колонки (714px) */
+  block-size: 386px; /* Задаём фиксированную высоту из задания */
+  margin-block-end: 16px; /* Добавляем отступ снизу до формы */
+}
+
+/* Настраиваем видео по Шагу 2.2 */
+.result__video {
+  inline-size: 100%;
+  block-size: 100%; /* Теперь видео занимает всю высоту контейнера */
+  object-fit: cover; /* Видео обрезается, чтобы заполнить блок без чёрных полос */
+  display: block;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* Растягиваем форму от левого до правого края .result */
-  inline-size: 100%; 
+  inline-size: 100%;
 }
 
 .search-form__fieldset {
-  border: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* Те самые рамки из предыдущих шагов */
+  border: 1px solid #ffffff; 
+  padding: 12px 15px;
   margin: 0;
+}
+
+.search-form__submit-button {
+  /* Кнопка тоже в рамке, как на твоём скриншоте */
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Дополнительно убедимся, что заголовки внутри рамок не имеют лишних отступов */
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .content__list-container {
@@ -101,6 +136,34 @@ ol {
   inline-size: 100%;
   block-size: 100%;
 }
+
+/* Шаг 2.3: Отступы в списке */
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Вертикальный отступ между карточками */
+}
+
+/* Шаг 2.4: Карточка в строку */
+.content__video-card {
+  display: flex;
+  align-items: flex-start; /* Прижимаем элементы к верху */
+}
+
+/* Шаг 2.5: Размеры превью */
+.content__video-card-thumbnail {
+  flex-shrink: 0; /* Картинка не будет сжиматься */
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Шаг 2.6: Описание занимает остаток места */
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
 
 
 
