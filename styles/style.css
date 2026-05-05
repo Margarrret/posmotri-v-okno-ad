@@ -297,5 +297,51 @@ ol {
   text-decoration: underline;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.1s ease; /* Мягкий переход для состояния :active */
+}
+
+/* Кнопка "Найти" в форме */
+.search-form__submit-button {
+  inline-size: 194px; /* Фиксированная ширина из макета */
+  block-size: 34px;
+  align-self: flex-end; /* Прижимаем к низу/концу контейнера */
+}
+
+/* Кнопка "Показать ещё" под списком */
+.more-button {
+  inline-size: 100%; /* Растягивается на всю ширину колонки */
+  block-size: 34px;
+}
+
+/* Состояние :focus (сброс) и :focus-visible (обводка) */
+.button:focus {
+  outline: none; /* Сбрасываем дефолтный фокус браузера */
+}
+
+.button:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px; /* Обводка на расстоянии от кнопки */
+}
+
+/* При наведении — подчеркивание текста */
+.button:hover {
+  text-decoration: underline;
+}
+
+/* Активное состояние — серая заливка как на картинке */
+.button:active {
+  background-color: #545050;
+}
 
 
